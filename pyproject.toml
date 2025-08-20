@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "live-subs-en-es"
+version = "0.1.0"
+description = "Real-time English-to-Spanish subtitles with Whisper, Argos Translate, and Tkinter overlay (macOS)."
+authors = ["Your Name <you@example.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "live_subs_en_to_es" }]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.13"
+
+# Speech recognition
+faster-whisper = "^0.10.0"
+
+# Audio capture
+sounddevice = "^0.4.6"
+numpy = "^1.26.0"
+
+# Translation
+argostranslate = "^1.9.6"
+
+# Console logging
+rich = "^13.9.0"
+
+# Tkinter is part of the Python standard library on macOS, so no need to list it.
+
+[tool.poetry.scripts]
+live-subs = "live_subs_en_to_es:main"
+
+[build-system]
+requires = ["poetry-core>=1.8.0"]
+build-backend = "poetry.core.masonry.api"
